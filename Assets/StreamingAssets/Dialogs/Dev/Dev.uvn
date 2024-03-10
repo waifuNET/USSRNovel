@@ -1,16 +1,25 @@
 #world
 	BG: GG_room.png
-	SOUND: lofi loop
+	SOUNDSFX: penisSFX.ogg sfx
+	SOUNDMUSIC: trackTest.wav music loop
+
 
 #Marine:chipi chipi
+	SOUNDSFX: penisSFX.ogg sfx loop
+
+
 #Marine:chapa chapa
+	SOUNDSFX: penisSFX.ogg sfx 
 
 #Gura: dubi dubi
 	BG: Kitchen.jpg
+	SOUNDSFX: penisSFX.ogg sfx
 #Gura: lava lava
+	SOUNDSFX: penisSFX.ogg sfx
 
 #Okayo: skibidi
 	BG: HELL
-	SOUND: DOOM
+	SOUNDSFX: penisSFX.ogg sfx
+
 
 #Gura: Oh nyo~

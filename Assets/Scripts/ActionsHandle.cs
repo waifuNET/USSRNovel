@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ActionsHandle : MonoBehaviour
@@ -18,8 +19,8 @@ public class ActionsHandle : MonoBehaviour
 	private void ActionHandle(string action)
 	{
 		if (action.Contains("BG")) { BG_AC(action); }
+		if (action.Contains("SOUND")) { Sounds_AC(action); }
 	}
-
 	public void StopActions(List<string> actions, int index)
 	{
 		for(int i = 0; i < actions.Count; i++)
@@ -43,5 +44,16 @@ public class ActionsHandle : MonoBehaviour
 			BackgroundHandler.SetNewBackground(actions[0]);
 		}
 	}
-	#endregion
+
+	private void Sounds_AC(string action)
+	{
+        action = action.Split(':')[1].Trim();
+        string[] arr = new string[] { "sfx", "music", "ambient" };
+        string[] actions = action.Split(' ');
+        if (actions.Length > 0)
+        {
+			AudioHandler.SetNewSound(actions[0], actions[1], actions.Any(x => arr.Contains(x)));
+        }
+    }
+    #endregion
 }
