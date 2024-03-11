@@ -38,18 +38,57 @@ public class AudioHandler : MonoBehaviour
         source = source.GetComponent<AudioSource>();
         using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(FilePath, AudioType.UNKNOWN))
         {
-            yield return www.SendWebRequest();
-            if (www.isNetworkError)
+            if (!File.Exists(FilePath))
             {
-                Debug.Log(www.error);
+                Debug.LogWarning("AudiFile doesn't exist.");
+                yield return null;
             }
-            else
-            {
-                Debug.Log(www.uri);
-                source.clip = DownloadHandlerAudioClip.GetContent(www);
-                source.loop = loop;
-                source.Play();
+            else 
+            { 
+                yield return www.SendWebRequest();
+                if (www.isNetworkError)
+                {
+                    Debug.Log(www.error);
+                }
+                else
+                {
+                    Debug.Log(www.uri);
+                    source.clip = DownloadHandlerAudioClip.GetContent(www);
+                    source.loop = loop;
+                    source.Play();
+                }
             }
+        }
+    }
+    public void PauseAudio(string type)
+    {
+        switch (type)
+        {
+            case "sfx":
+                sourceSFX.Pause();
+                break;
+            case "ambient":
+                sourceAmbient.Pause();
+                break;
+            case "music":
+                sourceMusic.Pause();
+                break;
+        }
+    }
+    public void PlayAudio(string type)
+    {
+
+        switch (type)
+        {
+            case "sfx":
+                sourceSFX.Play();
+                break;
+            case "ambient":
+                sourceAmbient.Play();
+                break;
+            case "music":
+                sourceMusic.Play();
+                break;
         }
     }
 }
