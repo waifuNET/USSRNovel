@@ -1,26 +1,26 @@
 #world
 	BG: GG_room.png
-	SOUNDSFX: penisSFX.ogg sfx
+	SOUNDSFX: swordSFX.ogg sfx
 	SOUNDMUSIC: trackTest.wav music loop
-	SPRITE: cs_1_body1.png vi_1_shy.png
+	
 
 
 #Marine:chipi chipi
-	SOUNDSFX: penisSFX.ogg sfx loop
+	SOUNDSFX: swordSFX.ogg sfx loop
 
 
 #Marine:chapa chapa
-	SOUNDSFX: penisSFX.ogg sfx 
+	SOUNDSFX: swordSFX.ogg sfx 
 
 #Gura: dubi dubi
 	BG: Kitchen.jpg
-	SOUNDSFX: penisSFX.ogg sfx
+	SOUNDSFX: swordSFX.ogg sfx
 #Gura: lava lava
-	SOUNDSFX: penisSFX.ogg sfx
+	SOUNDSFX: swordSFX.ogg sfx
 
 #Okayo: skibidi
 	BG: HELL
-	SOUNDSFX: penisSFX.ogg sfx
+	SOUNDSFX: swordSFX.ogg sfx
 
 
 #Gura: Oh nyo~
